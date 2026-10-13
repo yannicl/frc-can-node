@@ -11,7 +11,9 @@ This board is designed to operate from a standard 12 V DC input and provide a ro
 - transient suppression for automotive-style electrical noise
 - a DC-DC regulator to generate clean logic power
 - a CAN bus transceiver for reliable communication on the robot network
+- a switchable 120 Ω CAN bus termination resistor
 - an I²C bus and multiple user-configurable 3-pin ports for external devices
+- four WS8212 RGB LEDs for diagnostics
 
 The result is a compact CAN-capable node that is suitable for distributed sensor hubs, actuator interfaces, and experimental robot electronics.
 
@@ -21,12 +23,14 @@ The result is a compact CAN-capable node that is suitable for distributed sensor
 - Reverse-polarity protection using AO4407A MOSFET
 - Fuse protection via 1812L075/24DR
 - Bidirectional transient protection with SMBJ18CA TVS diode
-- Efficient step-down power conversion using LMR14006CDDCR
+- Efficient step-down power conversion using LMR14006XDDCR
 - CAN bus interface using SN65HVD231DR with PESD1CAN protection
+- Switchable 120 Ω termination resistor for the CAN bus
 - XIAO ESP32-C3 as the main MCU
 - Optional upgrade path to XIAO ESP32-S3 for increased performance
 - I²C connectivity for peripherals
 - Three 3-pin user ports for sensors and accessories
+- Four WS8212 RGB LEDs for diagnostics
 
 ## Hardware Architecture
 
@@ -47,7 +51,7 @@ This architecture keeps the module compact while providing the protection needed
 - 1812L075/24DR — input fuse
 - SMBJ18CA — TVS transient protection
 - AO4407A — reverse-polarity protection MOSFET
-- LMR14006CDDCR — DC-DC converter
+- LMR14006XDDCR — DC-DC converter
 - Seeed Studio XIAO ESP32-C3 — main microcontroller
 - XIAO ESP32-S3 — potential higher-performance alternative
 - SN65HVD231DR + PESD1CAN — CAN bus transceiver and protection
@@ -70,7 +74,7 @@ The board is intentionally compact and modular, making it useful for custom robo
 
 - `hardware/` — PCB and schematic assets (to be added)
 - `firmware/` — microcontroller firmware and examples (to be added)
-- `docs/` — design notes and documentation (to be added)
+- `docs/` — technical documentation for input protection, power conversion, and CAN interface
 - `LICENSE` and `LICENSES/` — licensing information
 
 ## License
